@@ -1,0 +1,66 @@
+/* Component-specific design tokens for Cards-Western block */
+
+.cards-western {
+  /* Container Layout */
+  --cards-western-container-padding-top: var(--spacing-xxl);
+  --cards-western-container-padding-bottom: var(--spacing-xxxl);
+  --cards-western-container-bg: var(--color-white);
+  --cards-western-max-width: 1143px;
+
+  /* Header Section */
+  --cards-western-header-gap: var(--spacing-xxl);
+  --cards-western-title-font-family: var(--font-gotham-narrow);
+  --cards-western-title-font-size: 32px;
+  --cards-western-title-line-height: 1.1;
+  --cards-western-title-color: var(--color-black);
+  --cards-western-title-font-weight: 900;
+
+  /* Button (CTA) */
+  --cards-western-button-bg: var(--color-maroon);
+  --cards-western-button-bg-hover: #770028;
+  --cards-western-button-color: var(--color-white);
+  --cards-western-button-padding: var(--spacing-md);
+  --cards-western-button-font-family: var(--font-gotham-narrow);
+  --cards-western-button-font-size: 14px;
+  --cards-western-button-line-height: 16px;
+  --cards-western-button-letter-spacing: 1px;
+  --cards-western-button-font-weight: 900;
+
+  /* Grid Layout */
+  --cards-western-grid-gap: var(--spacing-sm);
+  --cards-western-grid-columns: 2;
+  --cards-western-grid-rows: 2;
+
+  /* Card/Tile Dimensions */
+  --cards-western-card-width: 272px;
+  --cards-western-card-height: 272px;
+  --cards-western-card-border-top-width: 4px;
+  --cards-western-card-border-top-color: var(--color-red);
+  --cards-western-card-border-top-style: solid;
+
+  /* Card Image */
+  --cards-western-card-image-width: 100%;
+  --cards-western-card-image-height: 268px;
+  --cards-western-card-image-object-fit: cover;
+  --cards-western-card-image-object-position: center;
+
+  /* Card Label Box */
+  --cards-western-label-bg: var(--color-white);
+  --cards-western-label-width: 224px;
+  --cards-western-label-position-bottom: 48px;
+  --cards-western-label-position-right: 0;
+  --cards-western-label-padding-horizontal: var(--spacing-md);
+  --cards-western-label-padding-vertical: var(--spacing-sm);
+
+  /* Card Title */
+  --cards-western-card-title-font-family: var(--font-martel);
+  --cards-western-card-title-font-size: 24px;
+  --cards-western-card-title-line-height: 1.25;
+  --cards-western-card-title-color: var(--color-text-gray);
+  --cards-western-card-title-font-weight: 700;
+
+  /* Hover Effects */
+  --cards-western-card-transition: transform 0.3s ease, box-shadow 0.3s ease;
+  --cards-western-card-hover-transform: translateY(-4px);
+  --cards-western-card-hover-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}

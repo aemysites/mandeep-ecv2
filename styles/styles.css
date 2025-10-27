@@ -25,10 +25,17 @@
   --color-black: #000000;
   --color-white: #ffffff;
 
+  /* Western University colors (from Figma) */
+  --color-maroon: #990033;
+  --color-red: #ED0033;
+  --color-text-gray: #222426;
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
   --font-manrope: manrope, manrope-fallback, sans-serif;
+  --font-gotham-narrow: 'Gotham Narrow', 'Arial Narrow', sans-serif;
+  --font-martel: 'Martel', 'Georgia', serif;
 
   /* font weights */
   --font-weight-regular: 400;
@@ -57,6 +64,8 @@
   --spacing-md: 20px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
+  --spacing-xxl: 40px;
+  --spacing-xxxl: 80px;
 
   /* borders */
   --border-width-thin: 1px;
