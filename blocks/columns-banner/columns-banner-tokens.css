@@ -1,0 +1,76 @@
+/* Component-specific tokens for promotional banner */
+.columns-banner {
+  /* Container tokens */
+  --banner-container-bg: var(--color-bg-light-green);
+  --banner-container-padding: var(--spacing-xl);
+  --banner-container-min-height: 490px;
+
+  /* Layout tokens */
+  --banner-gap: var(--spacing-xl);
+  --banner-column-align: center;
+
+  /* Text column tokens */
+  --banner-text-width: 100%;
+  --banner-text-max-width: var(--max-width-text);
+  --banner-text-gap: var(--spacing-lg);
+  --banner-text-padding: var(--spacing-xl);
+
+  /* Heading tokens */
+  --banner-heading-font: var(--font-manrope);
+  --banner-heading-size: var(--heading-font-size-l);
+  --banner-heading-weight: var(--font-weight-extrabold);
+  --banner-heading-color: var(--color-text-dark-gray);
+  --banner-heading-transform: uppercase;
+  --banner-heading-line-height: 1.2;
+  --banner-heading-spacing: 0.34px;
+
+  /* Body text tokens */
+  --banner-body-font: var(--font-manrope);
+  --banner-body-size: var(--body-font-size-s);
+  --banner-body-weight: var(--font-weight-regular);
+  --banner-body-color: var(--color-black);
+  --banner-body-line-height: 1.6;
+  --banner-body-max-width: var(--max-width-text);
+
+  /* Button tokens */
+  --banner-button-bg: var(--color-white);
+  --banner-button-border: var(--border-width-thin);
+  --banner-button-border-color: var(--color-black);
+  --banner-button-border-style: var(--border-style-solid);
+  --banner-button-color: var(--color-black);
+  --banner-button-padding-x: var(--spacing-md);
+  --banner-button-padding-y: var(--spacing-xs);
+  --banner-button-font: var(--font-manrope);
+  --banner-button-size: var(--body-font-size-s);
+  --banner-button-weight: var(--font-weight-medium);
+  --banner-button-transform: uppercase;
+  --banner-button-gap: var(--spacing-xs);
+  --banner-button-width: 160px;
+
+  /* Button hover tokens */
+  --banner-button-hover-bg: var(--color-black);
+  --banner-button-hover-color: var(--color-white);
+
+  /* Image column tokens */
+  --banner-image-width: 100%;
+  --banner-image-height: 370px;
+  --banner-image-object-fit: cover;
+  --banner-image-padding: var(--spacing-xl);
+
+  /* Promo text tokens */
+  --banner-promo-font: var(--font-manrope);
+  --banner-promo-size: var(--heading-font-size-xxs);
+  --banner-promo-size-small: var(--body-font-size-xxs);
+  --banner-promo-weight: var(--font-weight-bold);
+  --banner-promo-weight-small: var(--font-weight-regular);
+  --banner-promo-color: var(--color-black);
+  --banner-promo-transform: uppercase;
+  --banner-promo-spacing: var(--spacing-xs);
+
+  /* Icon tokens */
+  --banner-icon-width: 16px;
+  --banner-icon-height: 16px;
+
+  /* Responsive breakpoint */
+  --banner-breakpoint: 900px;
+}

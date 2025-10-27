@@ -1,0 +1,136 @@
+/* Import component-specific tokens */
+@import './columns-banner-tokens.css';
+
+/* columns-banner block styles */
+.columns-banner {
+  background-color: var(--banner-container-bg);
+  position: relative;
+}
+
+.columns-banner > div {
+  display: flex;
+  flex-direction: column;
+  padding: var(--banner-container-padding);
+  min-height: var(--banner-container-min-height);
+  gap: var(--banner-gap);
+}
+
+.columns-banner img {
+  width: var(--banner-image-width);
+  height: var(--banner-image-height);
+  object-fit: var(--banner-image-object-fit);
+}
+
+.columns-banner > div > div {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--banner-text-gap);
+}
+
+.columns-banner > div > .columns-img-col {
+  order: 0;
+  position: relative;
+}
+
+.columns-banner > div > .columns-img-col img {
+  display: block;
+}
+
+/* Promo badge positioning in top-right */
+.columns-banner > div > .columns-img-col > div:first-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: transparent;
+  padding: var(--spacing-md);
+}
+
+/* Text content styling */
+.columns-banner h1,
+.columns-banner h2,
+.columns-banner h3 {
+  font-family: var(--banner-heading-font);
+  font-size: var(--banner-heading-size);
+  font-weight: var(--banner-heading-weight);
+  color: var(--banner-heading-color);
+  text-transform: var(--banner-heading-transform);
+  line-height: var(--banner-heading-line-height);
+  letter-spacing: var(--banner-heading-spacing);
+  margin: 0;
+}
+
+.columns-banner p {
+  font-family: var(--banner-body-font);
+  font-size: var(--banner-body-size);
+  font-weight: var(--banner-body-weight);
+  color: var(--banner-body-color);
+  line-height: var(--banner-body-line-height);
+  max-width: var(--banner-body-max-width);
+  margin: 0;
+}
+
+/* Button styling */
+.columns-banner a.button,
+.columns-banner .button {
+  background-color: var(--banner-button-bg);
+  border: var(--banner-button-border) var(--banner-button-border-style) var(--banner-button-border-color);
+  color: var(--banner-button-color);
+  padding: var(--banner-button-padding-y) var(--banner-button-padding-x);
+  font-family: var(--banner-button-font);
+  font-size: var(--banner-button-size);
+  font-weight: var(--banner-button-weight);
+  text-transform: var(--banner-button-transform);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--banner-button-gap);
+  width: fit-content;
+  max-width: var(--banner-button-width);
+  text-decoration: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.columns-banner a.button::after {
+  content: '→';
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.columns-banner a.button:hover {
+  background-color: var(--banner-button-hover-bg);
+  color: var(--banner-button-hover-color);
+}
+
+/* Promo text styling - positioned absolutely in top-right */
+.columns-banner > div > .columns-img-col strong {
+  font-family: var(--banner-promo-font);
+  font-size: var(--banner-promo-size);
+  font-weight: var(--banner-promo-weight);
+  color: var(--banner-promo-color);
+  text-transform: var(--banner-promo-transform);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.columns-banner > div > .columns-img-col > div:first-child p {
+  font-size: var(--banner-promo-size-small);
+  font-weight: var(--banner-promo-weight-small);
+  text-transform: none;
+  margin: 0;
+  max-width: none;
+}
+
+@media (width >= 900px) {
+  .columns-banner > div {
+    align-items: var(--banner-column-align);
+    flex-direction: row;
+    gap: var(--banner-gap);
+  }
+
+  .columns-banner > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
