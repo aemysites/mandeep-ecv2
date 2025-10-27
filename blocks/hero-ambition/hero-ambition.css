@@ -1,17 +1,27 @@
 /* Import component-specific tokens */
 @import './hero-ambition-tokens.css';
 
-.hero-container .hero-wrapper {
+main .section > div {
+  max-width: unset;
+}
+
+.hero-ambition-container {
   max-width: unset;
   padding: 0;
+}
+
+.hero-ambition-container > div {
+  max-width: unset;
+  padding: 0;
+  margin: 0;
 }
 
 .hero-ambition {
   position: relative;
   height: var(--hero-ambition-height);
-  width: var(--hero-ambition-width);
-  max-width: var(--hero-ambition-max-width);
-  margin: 0 auto;
+  width: 100%;
+  max-width: unset;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +62,7 @@
   align-items: center;
   gap: var(--hero-ambition-content-gap);
   text-align: center;
+  z-index: 1;
 }
 
 /* Title */
@@ -81,16 +92,18 @@
 }
 
 /* Button Container */
-.hero-ambition .button-container {
+.hero-ambition p.button-container {
   display: flex;
   gap: var(--hero-ambition-buttons-gap);
   align-items: center;
   justify-content: center;
   margin: 0;
+  text-shadow: none;
 }
 
 /* Button Base Styles */
-.hero-ambition .button-container a {
+.hero-ambition p.button-container a,
+.hero-ambition .button-container a.button {
   font-family: var(--hero-ambition-button-font-family);
   font-size: var(--hero-ambition-button-font-size);
   line-height: var(--hero-ambition-button-line-height);
@@ -103,28 +116,35 @@
   padding: var(--hero-ambition-button-primary-padding);
   border-radius: 0;
   margin: 0;
+  white-space: nowrap;
 }
 
 /* Primary Button (First button - Red) */
-.hero-ambition .button-container a:first-child {
+.hero-ambition p.button-container a:first-child,
+.hero-ambition .button-container a.button:first-child {
   background-color: var(--hero-ambition-button-primary-bg);
   color: var(--hero-ambition-button-primary-color);
   border: var(--hero-ambition-button-primary-border);
 }
 
-.hero-ambition .button-container a:first-child:hover {
+.hero-ambition p.button-container a:first-child:hover,
+.hero-ambition .button-container a.button:first-child:hover {
   background-color: var(--hero-ambition-button-primary-bg-hover);
+  text-decoration: none;
 }
 
 /* Secondary Button (Second button - White border) */
-.hero-ambition .button-container a:nth-child(2) {
+.hero-ambition p.button-container a:last-child,
+.hero-ambition .button-container a.button:last-child {
   background-color: var(--hero-ambition-button-secondary-bg);
   color: var(--hero-ambition-button-secondary-color);
   border: var(--hero-ambition-button-secondary-border);
 }
 
-.hero-ambition .button-container a:nth-child(2):hover {
+.hero-ambition p.button-container a:last-child:hover,
+.hero-ambition .button-container a.button:last-child:hover {
   background-color: var(--hero-ambition-button-secondary-bg-hover);
+  text-decoration: none;
 }
 
 /* Responsive */
