@@ -1,0 +1,58 @@
+/* Component-specific design tokens for Hero-Course banner block */
+
+.hero-course {
+  /* Container */
+  --hero-course-height: 510px;
+  --hero-course-width: 100%;
+  --hero-course-max-width: 1440px;
+
+  /* Background Image */
+  --hero-course-bg-image-width: 1486px;
+  --hero-course-bg-image-height: 991px;
+
+  /* Content Box */
+  --hero-course-content-box-width: 766px;
+  --hero-course-content-box-height: 335px;
+  --hero-course-content-box-left: 54px;
+  --hero-course-content-box-bg: rgba(0, 0, 0, 0.25);
+  --hero-course-content-box-blur: 10px;
+  --hero-course-content-box-border-color: #a30000;
+  --hero-course-content-box-border-width: 2px;
+  --hero-course-content-box-border-radius: 16px;
+  --hero-course-content-box-padding: 38px;
+
+  /* Heading */
+  --hero-course-heading-font-family: 'NanumGothic', sans-serif;
+  --hero-course-heading-font-size: 24px;
+  --hero-course-heading-font-weight: 800;
+  --hero-course-heading-line-height: 1.15;
+  --hero-course-heading-letter-spacing: 0.36px;
+  --hero-course-heading-color: #ffffff;
+  --hero-course-heading-text-transform: uppercase;
+  --hero-course-heading-margin-bottom: 20px;
+
+  /* Body Text */
+  --hero-course-body-font-family: 'Mulish', sans-serif;
+  --hero-course-body-font-size: 16px;
+  --hero-course-body-font-weight: 500;
+  --hero-course-body-line-height: 1.5;
+  --hero-course-body-letter-spacing: 0.24px;
+  --hero-course-body-color: #ffffff;
+  --hero-course-body-margin-bottom: 30px;
+
+  /* Button */
+  --hero-course-button-bg: #a20000;
+  --hero-course-button-bg-hover: #8a0000;
+  --hero-course-button-color: #ffffff;
+  --hero-course-button-font-family: 'NanumGothic', sans-serif;
+  --hero-course-button-font-size: 16px;
+  --hero-course-button-font-weight: 700;
+  --hero-course-button-letter-spacing: 0.24px;
+  --hero-course-button-text-transform: uppercase;
+  --hero-course-button-padding: 10px 16px;
+  --hero-course-button-border: none;
+  --hero-course-button-border-radius: 0;
+
+  /* Transitions */
+  --hero-course-transition: all 0.3s ease;
+}

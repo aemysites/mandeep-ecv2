@@ -1,0 +1,186 @@
+/* Import component-specific tokens */
+@import './hero-course-tokens.css';
+
+/* Hide page title */
+.hero-course-container > div > h1:first-child,
+.hero-course-container > div > h2:first-child,
+.section > div > h1:first-child,
+.section > div > h2:first-child {
+  display: none;
+}
+
+/* Remove default section constraints for full-width */
+.hero-course-container {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-course-container > div {
+  max-width: unset;
+  padding: 0;
+  margin: 0;
+}
+
+main .section > div {
+  max-width: unset;
+}
+
+/* Hero Container */
+.hero-course {
+  position: relative;
+  height: var(--hero-course-height);
+  width: var(--hero-course-width);
+  max-width: var(--hero-course-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background Image Container - First child div */
+.hero-course > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-course > div:first-child picture {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-course > div:first-child img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Box with Blur and Border - Second child div */
+.hero-course > div:nth-child(2) {
+  position: relative;
+  z-index: 1;
+  width: var(--hero-course-content-box-width);
+  min-height: var(--hero-course-content-box-height);
+  margin-left: var(--hero-course-content-box-left);
+}
+
+.hero-course > div:nth-child(2) > div {
+  padding: var(--hero-course-content-box-padding);
+  background-color: var(--hero-course-content-box-bg);
+  backdrop-filter: blur(var(--hero-course-content-box-blur));
+  -webkit-backdrop-filter: blur(var(--hero-course-content-box-blur));
+  border: var(--hero-course-content-box-border-width) solid var(--hero-course-content-box-border-color);
+  border-radius: var(--hero-course-content-box-border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Heading */
+.hero-course h1,
+.hero-course h2 {
+  font-family: var(--hero-course-heading-font-family);
+  font-size: var(--hero-course-heading-font-size);
+  font-weight: var(--hero-course-heading-font-weight);
+  line-height: var(--hero-course-heading-line-height);
+  letter-spacing: var(--hero-course-heading-letter-spacing);
+  color: var(--hero-course-heading-color);
+  text-transform: var(--hero-course-heading-text-transform);
+  margin: 0 0 var(--hero-course-heading-margin-bottom) 0;
+}
+
+/* Body Text */
+.hero-course p:not(.button-container p) {
+  font-family: var(--hero-course-body-font-family);
+  font-size: var(--hero-course-body-font-size);
+  font-weight: var(--hero-course-body-font-weight);
+  line-height: var(--hero-course-body-line-height);
+  letter-spacing: var(--hero-course-body-letter-spacing);
+  color: var(--hero-course-body-color);
+  margin: 0 0 var(--hero-course-body-margin-bottom) 0;
+}
+
+/* Button Container */
+.hero-course p.button-container {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 0;
+}
+
+/* Button Styles */
+.hero-course p.button-container a,
+.hero-course .button-container a.button {
+  font-family: var(--hero-course-button-font-family);
+  font-size: var(--hero-course-button-font-size);
+  font-weight: var(--hero-course-button-font-weight);
+  letter-spacing: var(--hero-course-button-letter-spacing);
+  text-transform: var(--hero-course-button-text-transform);
+  background-color: var(--hero-course-button-bg);
+  color: var(--hero-course-button-color);
+  padding: var(--hero-course-button-padding);
+  border: var(--hero-course-button-border);
+  border-radius: var(--hero-course-button-border-radius);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--hero-course-transition);
+  white-space: nowrap;
+}
+
+.hero-course p.button-container a:hover,
+.hero-course .button-container a.button:hover {
+  background-color: var(--hero-course-button-bg-hover);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-course {
+    height: auto;
+    min-height: 400px;
+    padding: 40px 24px;
+  }
+
+  .hero-course > div:nth-child(2) {
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .hero-course h1,
+  .hero-course h2 {
+    font-size: 20px;
+  }
+
+  .hero-course p:not(.button-container p) {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-course > div:nth-child(2) {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .hero-course > div:nth-child(2) > div {
+    padding: 24px;
+  }
+
+  .hero-course h1,
+  .hero-course h2 {
+    font-size: 18px;
+  }
+
+  .hero-course .button-container {
+    width: 100%;
+  }
+
+  .hero-course .button-container a {
+    width: 100%;
+    text-align: center;
+  }
+}
