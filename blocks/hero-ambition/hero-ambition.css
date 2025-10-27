@@ -1,0 +1,160 @@
+/* Import component-specific tokens */
+@import './hero-ambition-tokens.css';
+
+.hero-container .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.hero-ambition {
+  position: relative;
+  height: var(--hero-ambition-height);
+  width: var(--hero-ambition-width);
+  max-width: var(--hero-ambition-max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--hero-ambition-padding-vertical) var(--hero-ambition-padding-horizontal);
+  overflow: hidden;
+}
+
+/* Background Image */
+.hero-ambition picture {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero-ambition img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dark Overlay */
+.hero-ambition::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: var(--hero-ambition-bg-overlay);
+}
+
+/* Content Container */
+.hero-ambition > div {
+  width: var(--hero-ambition-content-width);
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--hero-ambition-content-gap);
+  text-align: center;
+}
+
+/* Title */
+.hero-ambition h1,
+.hero-ambition h2 {
+  font-family: var(--hero-ambition-title-font-family);
+  font-size: var(--hero-ambition-title-font-size);
+  line-height: var(--hero-ambition-title-line-height);
+  color: var(--hero-ambition-title-color);
+  font-weight: var(--hero-ambition-title-font-weight);
+  text-shadow: var(--hero-ambition-title-text-shadow);
+  text-align: var(--hero-ambition-title-text-align);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Subtitle */
+.hero-ambition p:not(.button-container p) {
+  font-family: var(--hero-ambition-subtitle-font-family);
+  font-size: var(--hero-ambition-subtitle-font-size);
+  line-height: var(--hero-ambition-subtitle-line-height);
+  color: var(--hero-ambition-subtitle-color);
+  font-weight: var(--hero-ambition-subtitle-font-weight);
+  text-shadow: var(--hero-ambition-subtitle-text-shadow);
+  text-align: var(--hero-ambition-subtitle-text-align);
+  margin: 0;
+}
+
+/* Button Container */
+.hero-ambition .button-container {
+  display: flex;
+  gap: var(--hero-ambition-buttons-gap);
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+/* Button Base Styles */
+.hero-ambition .button-container a {
+  font-family: var(--hero-ambition-button-font-family);
+  font-size: var(--hero-ambition-button-font-size);
+  line-height: var(--hero-ambition-button-line-height);
+  letter-spacing: var(--hero-ambition-button-letter-spacing);
+  font-weight: var(--hero-ambition-button-font-weight);
+  text-transform: var(--hero-ambition-button-text-transform);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--hero-ambition-transition);
+  padding: var(--hero-ambition-button-primary-padding);
+  border-radius: 0;
+  margin: 0;
+}
+
+/* Primary Button (First button - Red) */
+.hero-ambition .button-container a:first-child {
+  background-color: var(--hero-ambition-button-primary-bg);
+  color: var(--hero-ambition-button-primary-color);
+  border: var(--hero-ambition-button-primary-border);
+}
+
+.hero-ambition .button-container a:first-child:hover {
+  background-color: var(--hero-ambition-button-primary-bg-hover);
+}
+
+/* Secondary Button (Second button - White border) */
+.hero-ambition .button-container a:nth-child(2) {
+  background-color: var(--hero-ambition-button-secondary-bg);
+  color: var(--hero-ambition-button-secondary-color);
+  border: var(--hero-ambition-button-secondary-border);
+}
+
+.hero-ambition .button-container a:nth-child(2):hover {
+  background-color: var(--hero-ambition-button-secondary-bg-hover);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-ambition {
+    padding: 40px 24px;
+    height: auto;
+    min-height: 400px;
+  }
+
+  .hero-ambition h1,
+  .hero-ambition h2 {
+    font-size: 48px;
+    white-space: normal;
+  }
+
+  .hero-ambition .button-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ambition .button-container a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-ambition h1,
+  .hero-ambition h2 {
+    font-size: 36px;
+  }
+}

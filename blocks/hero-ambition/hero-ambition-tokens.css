@@ -1,0 +1,71 @@
+/* Component-specific design tokens for Hero-Ambition block */
+
+.hero-ambition {
+  /* Container */
+  --hero-ambition-height: 540px;
+  --hero-ambition-width: 100%;
+  --hero-ambition-max-width: 1440px;
+  --hero-ambition-padding-horizontal: 156px;
+  --hero-ambition-padding-vertical: 0;
+
+  /* Background */
+  --hero-ambition-bg-overlay: rgba(10, 10, 10, 0.4);
+
+  /* Content Container */
+  --hero-ambition-content-width: 650px;
+  --hero-ambition-content-gap: 18px;
+
+  /* Title */
+  --hero-ambition-title-font-family: var(--font-gotham-narrow);
+  --hero-ambition-title-font-size: 72px;
+  --hero-ambition-title-line-height: 1.1;
+  --hero-ambition-title-color: var(--color-white);
+  --hero-ambition-title-font-weight: 900;
+  --hero-ambition-title-text-shadow: rgba(0, 0, 0, 0.25) 0px 4.255px 4.255px;
+  --hero-ambition-title-text-align: center;
+
+  /* Subtitle */
+  --hero-ambition-subtitle-font-family: var(--font-gotham-narrow);
+  --hero-ambition-subtitle-font-size: 18px;
+  --hero-ambition-subtitle-line-height: 1.25;
+  --hero-ambition-subtitle-color: var(--color-white);
+  --hero-ambition-subtitle-font-weight: 900;
+  --hero-ambition-subtitle-text-shadow: rgba(0, 0, 0, 0.25) 0px 4.255px 4.255px;
+  --hero-ambition-subtitle-text-align: center;
+
+  /* Buttons Container */
+  --hero-ambition-buttons-gap: 8px;
+
+  /* Primary Button (Red) */
+  --hero-ambition-button-primary-bg: var(--color-red);
+  --hero-ambition-button-primary-bg-hover: #c40029;
+  --hero-ambition-button-primary-color: var(--color-white);
+  --hero-ambition-button-primary-padding: var(--spacing-md);
+  --hero-ambition-button-primary-border: none;
+
+  /* Secondary Button (White border) */
+  --hero-ambition-button-secondary-bg: transparent;
+  --hero-ambition-button-secondary-bg-hover: rgba(255, 255, 255, 0.1);
+  --hero-ambition-button-secondary-color: var(--color-white);
+  --hero-ambition-button-secondary-padding: var(--spacing-md);
+  --hero-ambition-button-secondary-border: 1px solid var(--color-white);
+
+  /* Button Typography */
+  --hero-ambition-button-font-family: var(--font-gotham-narrow);
+  --hero-ambition-button-font-size: 14px;
+  --hero-ambition-button-line-height: 16px;
+  --hero-ambition-button-letter-spacing: 1px;
+  --hero-ambition-button-font-weight: 900;
+  --hero-ambition-button-text-transform: uppercase;
+
+  /* Carousel Indicators */
+  --hero-ambition-indicators-bottom: 31px;
+  --hero-ambition-indicator-size: 12px;
+  --hero-ambition-indicator-gap: 11px;
+  --hero-ambition-indicator-color: var(--color-white);
+  --hero-ambition-indicator-opacity: 0.5;
+  --hero-ambition-indicator-active-opacity: 1;
+
+  /* Transitions */
+  --hero-ambition-transition: all 0.3s ease;
+}
