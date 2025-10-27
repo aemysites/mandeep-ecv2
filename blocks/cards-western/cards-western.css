@@ -16,7 +16,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
 }
 
 /* Header row - first li with title and button */
@@ -26,7 +28,6 @@
   align-items: center;
   gap: var(--cards-western-header-gap);
   width: 100%;
-  margin-bottom: var(--spacing-lg);
   border: none;
   height: auto;
 }
@@ -59,21 +60,31 @@
   background-color: var(--cards-western-button-bg-hover);
 }
 
+/* Cards container - second part of ul with cards in a row */
+.cards-western > ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.cards-western > ul > li:first-child {
+  flex-basis: 100%;
+}
+
 /* Card items - 4 in a row */
 .cards-western > ul > li:not(:first-child) {
-  display: inline-block;
-  vertical-align: top;
   position: relative;
   width: var(--cards-western-card-width);
   height: var(--cards-western-card-height);
   border-top: var(--cards-western-card-border-top-width) var(--cards-western-card-border-top-style) var(--cards-western-card-border-top-color);
   overflow: hidden;
   transition: var(--cards-western-card-transition);
-  margin-right: var(--cards-western-grid-gap);
+  flex-shrink: 0;
 }
 
-.cards-western > ul > li:not(:first-child):last-child {
-  margin-right: 0;
+.cards-western > ul > li:not(:first-child):not(:last-child) {
+  margin-right: var(--cards-western-grid-gap);
 }
 
 .cards-western > ul > li:not(:first-child):hover {
@@ -121,6 +132,16 @@
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
+  .cards-western {
+    max-width: 100%;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+
+  .cards-western > ul {
+    justify-content: center;
+  }
+
   .cards-western > ul > li:not(:first-child) {
     width: calc((100% - (var(--cards-western-grid-gap) * 3)) / 4);
   }
@@ -129,10 +150,9 @@
 @media (max-width: 900px) {
   .cards-western > ul > li:not(:first-child) {
     width: calc((100% - var(--cards-western-grid-gap)) / 2);
-    margin-right: var(--cards-western-grid-gap);
   }
 
-  .cards-western > ul > li:not(:first-child):nth-child(even) {
+  .cards-western > ul > li:not(:first-child):nth-child(3) {
     margin-right: 0;
   }
 }
@@ -147,7 +167,7 @@
     width: 100%;
     height: auto;
     aspect-ratio: 1;
-    margin-right: 0;
+    margin-right: 0 !important;
     margin-bottom: var(--cards-western-grid-gap);
   }
 
