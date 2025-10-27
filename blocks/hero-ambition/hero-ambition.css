@@ -1,6 +1,20 @@
 /* Import component-specific tokens */
 @import './hero-ambition-tokens.css';
 
+/* Hide the section title (Hero Ambition heading from markdown) */
+.hero-ambition-container > div > h1:first-child,
+.hero-ambition-container > div > h2:first-child {
+  display: none;
+}
+
+/* Hide page title in section containing hero-ambition */
+.section .hero-ambition-wrapper > h1,
+.section .hero-ambition-wrapper > h2,
+.section > div > h1#hero-ambition,
+.section > div > h2#hero-ambition {
+  display: none;
+}
+
 main .section > div {
   max-width: unset;
 }
