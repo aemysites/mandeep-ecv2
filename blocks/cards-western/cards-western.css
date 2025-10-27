@@ -11,25 +11,36 @@
   margin: 0 auto;
 }
 
-/* Header with title and button */
-.cards-western .cards-header {
+/* Main list container */
+.cards-western > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Header row - first li with title and button */
+.cards-western > ul > li:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--cards-western-header-gap);
+  width: 100%;
   margin-bottom: var(--spacing-lg);
+  border: none;
+  height: auto;
 }
 
-.cards-western .cards-title {
+.cards-western > ul > li:first-child > div:first-child {
   font-family: var(--cards-western-title-font-family);
   font-size: var(--cards-western-title-font-size);
   line-height: var(--cards-western-title-line-height);
   color: var(--cards-western-title-color);
   font-weight: var(--cards-western-title-font-weight);
-  margin: 0;
+  flex-grow: 1;
 }
 
-.cards-western .cards-cta {
+.cards-western > ul > li:first-child a {
   background-color: var(--cards-western-button-bg);
   color: var(--cards-western-button-color);
   padding: var(--cards-western-button-padding);
@@ -44,32 +55,28 @@
   transition: background-color 0.3s ease;
 }
 
-.cards-western .cards-cta:hover {
+.cards-western > ul > li:first-child a:hover {
   background-color: var(--cards-western-button-bg-hover);
 }
 
-/* Card Grid */
-.cards-western > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(var(--cards-western-grid-columns), var(--cards-western-card-width));
-  grid-template-rows: repeat(var(--cards-western-grid-rows), var(--cards-western-card-height));
-  gap: var(--cards-western-grid-gap);
-  justify-content: center;
-}
-
-.cards-western > ul > li {
+/* Card items - 4 in a row */
+.cards-western > ul > li:not(:first-child) {
+  display: inline-block;
+  vertical-align: top;
   position: relative;
   width: var(--cards-western-card-width);
   height: var(--cards-western-card-height);
   border-top: var(--cards-western-card-border-top-width) var(--cards-western-card-border-top-style) var(--cards-western-card-border-top-color);
   overflow: hidden;
   transition: var(--cards-western-card-transition);
+  margin-right: var(--cards-western-grid-gap);
 }
 
-.cards-western > ul > li:hover {
+.cards-western > ul > li:not(:first-child):last-child {
+  margin-right: 0;
+}
+
+.cards-western > ul > li:not(:first-child):hover {
   transform: var(--cards-western-card-hover-transform);
   box-shadow: var(--cards-western-card-hover-shadow);
 }
@@ -84,7 +91,7 @@
   height: var(--cards-western-card-image-height);
 }
 
-.cards-western > ul > li img {
+.cards-western > ul > li:not(:first-child) img {
   width: var(--cards-western-card-image-width);
   height: var(--cards-western-card-image-height);
   object-fit: var(--cards-western-card-image-object-fit);
@@ -102,7 +109,8 @@
   margin: 0;
 }
 
-.cards-western .cards-card-body p {
+.cards-western .cards-card-body p,
+.cards-western .cards-card-body strong {
   font-family: var(--cards-western-card-title-font-family);
   font-size: var(--cards-western-card-title-font-size);
   line-height: var(--cards-western-card-title-line-height);
@@ -112,31 +120,39 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1200px) {
+  .cards-western > ul > li:not(:first-child) {
+    width: calc((100% - (var(--cards-western-grid-gap) * 3)) / 4);
+  }
+}
+
 @media (max-width: 900px) {
-  .cards-western > ul {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+  .cards-western > ul > li:not(:first-child) {
+    width: calc((100% - var(--cards-western-grid-gap)) / 2);
+    margin-right: var(--cards-western-grid-gap);
   }
 
-  .cards-western > ul > li {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-  }
-
-  .cards-western .cards-card-image,
-  .cards-western > ul > li img {
-    height: 100%;
+  .cards-western > ul > li:not(:first-child):nth-child(even) {
+    margin-right: 0;
   }
 }
 
 @media (max-width: 600px) {
-  .cards-western > ul {
-    grid-template-columns: 1fr;
-  }
-
-  .cards-western .cards-header {
+  .cards-western > ul > li:first-child {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .cards-western > ul > li:not(:first-child) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    margin-right: 0;
+    margin-bottom: var(--cards-western-grid-gap);
+  }
+
+  .cards-western .cards-card-image,
+  .cards-western > ul > li:not(:first-child) img {
+    height: 100%;
   }
 }

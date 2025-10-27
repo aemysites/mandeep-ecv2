@@ -28,8 +28,8 @@
 
   /* Grid Layout */
   --cards-western-grid-gap: var(--spacing-sm);
-  --cards-western-grid-columns: 2;
-  --cards-western-grid-rows: 2;
+  --cards-western-grid-columns: 4;
+  --cards-western-grid-rows: 1;
 
   /* Card/Tile Dimensions */
   --cards-western-card-width: 272px;
