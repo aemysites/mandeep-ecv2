@@ -7,18 +7,20 @@
   background-color: var(--cards-western-container-bg);
   padding-top: var(--cards-western-container-padding-top);
   padding-bottom: var(--cards-western-container-padding-bottom);
-  max-width: var(--cards-western-max-width);
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
-/* Main list container */
+/* Main list container - use block layout for better control */
 .cards-western > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+  display: block;
+  width: 100%;
+  max-width: var(--cards-western-max-width);
+  margin: 0 auto;
 }
 
 /* Header row - first li with title and button */
@@ -28,6 +30,7 @@
   align-items: center;
   gap: var(--cards-western-header-gap);
   width: 100%;
+  margin-bottom: 23px;
   border: none;
   height: auto;
 }
@@ -54,37 +57,30 @@
   text-decoration: none;
   display: inline-block;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .cards-western > ul > li:first-child a:hover {
   background-color: var(--cards-western-button-bg-hover);
+  text-decoration: none;
 }
 
-/* Cards container - second part of ul with cards in a row */
-.cards-western > ul {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
-
-.cards-western > ul > li:first-child {
-  flex-basis: 100%;
-}
-
-/* Card items - 4 in a row */
+/* Cards wrapper - contains all 4 cards in a single row */
 .cards-western > ul > li:not(:first-child) {
+  display: inline-block;
+  vertical-align: top;
   position: relative;
   width: var(--cards-western-card-width);
   height: var(--cards-western-card-height);
   border-top: var(--cards-western-card-border-top-width) var(--cards-western-card-border-top-style) var(--cards-western-card-border-top-color);
   overflow: hidden;
   transition: var(--cards-western-card-transition);
-  flex-shrink: 0;
+  margin-right: var(--cards-western-grid-gap);
 }
 
-.cards-western > ul > li:not(:first-child):not(:last-child) {
-  margin-right: var(--cards-western-grid-gap);
+.cards-western > ul > li:nth-child(5) {
+  margin-right: 0;
 }
 
 .cards-western > ul > li:not(:first-child):hover {
@@ -118,6 +114,7 @@
   background-color: var(--cards-western-label-bg);
   padding: var(--cards-western-label-padding-vertical) var(--cards-western-label-padding-horizontal);
   margin: 0;
+  box-sizing: border-box;
 }
 
 .cards-western .cards-card-body p,
@@ -133,13 +130,8 @@
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .cards-western {
-    max-width: 100%;
     padding-left: var(--spacing-lg);
     padding-right: var(--spacing-lg);
-  }
-
-  .cards-western > ul {
-    justify-content: center;
   }
 
   .cards-western > ul > li:not(:first-child) {
@@ -152,8 +144,13 @@
     width: calc((100% - var(--cards-western-grid-gap)) / 2);
   }
 
-  .cards-western > ul > li:not(:first-child):nth-child(3) {
+  .cards-western > ul > li:nth-child(3),
+  .cards-western > ul > li:nth-child(5) {
     margin-right: 0;
+  }
+
+  .cards-western > ul > li:nth-child(4) {
+    margin-right: var(--cards-western-grid-gap);
   }
 }
 
