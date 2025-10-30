@@ -1,65 +1,58 @@
+import { createOptimizedPicture } from '../../scripts/aem.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
-  // Detect phase type from content for color coding
-  const firstRow = block.querySelector(':scope > div:first-child');
-  const headerText = firstRow?.textContent.toLowerCase() || '';
-
-  if (headerText.includes('correction phase')) {
-    block.classList.add('correction-phase');
-  } else if (headerText.includes('maintenance phase') || headerText.includes('hemodialysis')) {
-    block.classList.add('maintenance-phase');
-  }
-
-  // Setup header section (first two rows)
+  const ul = document.createElement('ul');
   const rows = [...block.children];
-  if (rows.length >= 2) {
-    const headerSection = document.createElement('div');
-    headerSection.classList.add('dosing-header');
 
-    // Title row (with superscript)
-    const titleRow = rows[0];
-    titleRow.classList.add('dosing-title');
+  // Skip the first row if it's the block header (contains "columns-dosing")
+  const startRow = rows[0]?.textContent.trim().toLowerCase().includes('columns-dosing') ? 1 : 0;
+  const contentRows = rows.slice(startRow);
 
-    // Description row
-    const descRow = rows[1];
-    descRow.classList.add('dosing-description');
+  if (contentRows.length === 0) return;
 
-    headerSection.append(titleRow, descRow);
-    block.prepend(headerSection);
-  }
+  // Find the number of columns (cards) from the first content row
+  const numColumns = contentRows[0]?.children.length || 0;
 
-  // Setup content card (remaining rows)
-  if (rows.length >= 3) {
-    const contentCard = document.createElement('div');
-    contentCard.classList.add('dosing-card');
+  // Transpose: create one card per column
+  for (let col = 0; col < numColumns; col++) {
+    const li = document.createElement('li');
 
-    // Phase label row (colored header)
-    if (rows[2]) {
-      rows[2].classList.add('phase-label');
-    }
+    // Collect all cells from this column across all rows
+    contentRows.forEach((row) => {
+      const cell = row.children[col];
+      if (cell && cell.textContent.trim()) {
+        const cardDiv = document.createElement('div');
 
-    // Two-column content row
-    if (rows[3]) {
-      const contentRow = rows[3];
-      contentRow.classList.add('dosing-content-row');
+        // Move content from cell to cardDiv
+        while (cell.firstElementChild) {
+          cardDiv.append(cell.firstElementChild);
+        }
 
-      const columns = [...contentRow.children];
-      if (columns.length >= 2) {
-        columns[0].classList.add('dosing-image-col');
-        columns[1].classList.add('dosing-text-col');
+        // Classify as image or body
+        if (cardDiv.querySelector('picture')) {
+          cardDiv.className = 'columns-dosing-card-image';
+        } else {
+          cardDiv.className = 'columns-dosing-card-body';
+        }
 
-        // Style lists in text column
-        const lists = columns[1].querySelectorAll('ul');
-        lists.forEach(list => {
-          list.classList.add('dosing-list');
-        });
+        li.append(cardDiv);
       }
-    }
+    });
 
-    // Append all content rows to card
-    for (let i = 2; i < rows.length; i++) {
-      contentCard.append(rows[i]);
+    // Only add card if it has content
+    if (li.children.length > 0) {
+      ul.append(li);
     }
-
-    block.append(contentCard);
   }
+
+  // Optimize images
+  ul.querySelectorAll('picture > img').forEach((img) => {
+    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+    moveInstrumentation(img, optimizedPic.querySelector('img'));
+    img.closest('picture').replaceWith(optimizedPic);
+  });
+
+  block.textContent = '';
+  block.append(ul);
 }
