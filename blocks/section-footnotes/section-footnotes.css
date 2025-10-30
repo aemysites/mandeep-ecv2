@@ -1,0 +1,67 @@
+/* Section Footnotes - For references and legal disclaimers */
+
+.section-footnotes-container .section-footnotes-wrapper {
+  max-width: 1242px;
+  padding: 0 24px;
+}
+
+.section-footnotes.footnotes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 40px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Footnote Section (disclaimers, asterisk notes) */
+.section-footnotes .footnote-section {
+  font-size: 14px;
+  line-height: 1.5;
+  color: black;
+}
+
+.section-footnotes .footnote-section p {
+  margin: 0 0 8px 0;
+}
+
+.section-footnotes .footnote-section p:last-child {
+  margin-bottom: 0;
+}
+
+.section-footnotes .footnote-section sup {
+  font-size: 9px;
+}
+
+/* References Section */
+.section-footnotes .references-section {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--lokelma-blue, #003b45);
+}
+
+.section-footnotes .references-section p {
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.section-footnotes .reference-list {
+  margin: 0;
+  padding-left: 24px;
+  list-style-type: decimal;
+}
+
+.section-footnotes .reference-list li {
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.section-footnotes .reference-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (width >= 900px) {
+  .section-footnotes-container .section-footnotes-wrapper {
+    padding: 0 32px;
+  }
+}

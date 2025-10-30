@@ -1,0 +1,249 @@
+/* Header Pharma - Multi-level navigation for pharmaceutical sites */
+
+.header-pharma-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+}
+
+.header-pharma-container .header-pharma-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+.nav-pharma-wrapper {
+  width: 100%;
+}
+
+.nav-pharma {
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+/* Utility Navigation (top bar) */
+.nav-pharma-utility {
+  background: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+  padding: 16px 60px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 47px;
+  font-family: 'Lexia', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.nav-pharma-utility a {
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+.nav-pharma-utility a:hover {
+  color: var(--lokelma-pink, #c62263);
+}
+
+/* Language selector */
+.nav-pharma-utility .language {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-pharma-utility .language .active {
+  color: var(--lokelma-pink, #830051);
+  font-weight: 700;
+}
+
+/* Main Navigation */
+.nav-pharma-main {
+  border-bottom: 1px solid #ddd;
+  padding: 16px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 64px;
+}
+
+.nav-pharma-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-pharma-main ul {
+  display: flex;
+  gap: 72px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-pharma-main a {
+  font-family: 'Lexia', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+
+.nav-pharma-main a:hover {
+  color: var(--lokelma-pink, #c62263);
+}
+
+/* Breadcrumb Navigation */
+.nav-pharma-breadcrumb {
+  padding: 21px 60px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  min-height: 64px;
+}
+
+.nav-pharma-breadcrumb ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-pharma-breadcrumb li::after {
+  content: '>';
+  margin-left: 12px;
+  color: #666;
+}
+
+.nav-pharma-breadcrumb li:last-child::after {
+  content: '';
+}
+
+.nav-pharma-breadcrumb a {
+  font-family: 'Lexia', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+
+/* Sub Navigation (tabs) */
+.nav-pharma-subnav {
+  background: #f3f3f3;
+  border-bottom: 2px solid #ddd;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  padding: 0;
+}
+
+.nav-pharma-subnav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-pharma-subnav li {
+  position: relative;
+}
+
+.nav-pharma-subnav a {
+  display: block;
+  padding: 16px;
+  font-family: 'Lexia', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.44;
+  color: #1c1c1c;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav-pharma-subnav li.active a {
+  font-weight: 400;
+}
+
+.nav-pharma-subnav li.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--lokelma-gold, #f0ab00);
+}
+
+.nav-pharma-subnav a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Hamburger menu for mobile */
+.nav-pharma-hamburger {
+  display: none;
+  padding: 16px;
+}
+
+.nav-pharma-hamburger button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-pharma-hamburger-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: black;
+  position: relative;
+}
+
+.nav-pharma-hamburger-icon::before,
+.nav-pharma-hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: black;
+  position: absolute;
+}
+
+.nav-pharma-hamburger-icon::before {
+  top: -8px;
+}
+
+.nav-pharma-hamburger-icon::after {
+  top: 8px;
+}
+
+/* Mobile responsive */
+@media (width < 900px) {
+  .nav-pharma-hamburger {
+    display: block;
+  }
+
+  .nav-pharma-utility,
+  .nav-pharma-main ul,
+  .nav-pharma-breadcrumb,
+  .nav-pharma-subnav {
+    display: none;
+  }
+
+  .nav-pharma[aria-expanded="true"] .nav-pharma-utility,
+  .nav-pharma[aria-expanded="true"] .nav-pharma-main ul,
+  .nav-pharma[aria-expanded="true"] .nav-pharma-breadcrumb,
+  .nav-pharma[aria-expanded="true"] .nav-pharma-subnav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-pharma-main {
+    padding: 16px;
+  }
+
+  .nav-pharma-utility,
+  .nav-pharma-breadcrumb {
+    padding: 16px;
+  }
+}
