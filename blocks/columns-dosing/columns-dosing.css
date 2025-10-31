@@ -8,6 +8,38 @@
   --az-black: #000000;
 }
 
+/* Section headings above blocks */
+.columns-dosing-container h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+  color: var(--az-black);
+  margin: 40px 0 8px;
+}
+
+/* Subtitle paragraph below heading */
+.columns-dosing-container h3 + p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--az-dark-gray);
+  margin: 0 0 16px;
+}
+
+/* Blue italic callout for administration */
+.columns-dosing-container em {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--lokelma-blue);
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
 /* Container */
 .columns-dosing {
   max-width: 1242px;
@@ -100,6 +132,73 @@
   margin-bottom: 0;
 }
 
+/* Dosing visual container (left column) */
+.columns-dosing .dosing-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Large dosing frequency (3x, 1x) */
+.columns-dosing .dose-frequency {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1;
+  color: var(--lokelma-green);
+  margin: 0;
+}
+
+/* /day text */
+.columns-dosing .dose-per {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1;
+  color: var(--lokelma-green);
+  margin-left: 8px;
+}
+
+/* Dosage amount (10 g for up to 48 hours, 5 g) */
+.columns-dosing .dose-amount {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--lokelma-green);
+  margin: 12px 0 24px;
+  text-align: center;
+}
+
+/* Small sachet image in dosing visual */
+.columns-dosing .dosing-visual img {
+  max-width: 150px;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Administration visual container */
+.columns-dosing .admin-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Water amount text (3 tbsp / 45 mL) */
+.columns-dosing .water-amount {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.3;
+  color: var(--lokelma-green);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* Responsive - Stack on mobile */
 @media (max-width: 768px) {
   .columns-dosing {
@@ -120,5 +219,30 @@
 
   .columns-dosing > div:first-child p {
     font-size: 18px;
+  }
+
+  .columns-dosing-container h3 {
+    font-size: 18px;
+    margin: 32px 0 8px;
+  }
+
+  .columns-dosing-container h3 + p {
+    font-size: 16px;
+  }
+
+  .columns-dosing .dose-frequency {
+    font-size: 60px;
+  }
+
+  .columns-dosing .dose-per {
+    font-size: 36px;
+  }
+
+  .columns-dosing .dose-amount {
+    font-size: 16px;
+  }
+
+  .columns-dosing .water-amount {
+    font-size: 20px;
   }
 }
