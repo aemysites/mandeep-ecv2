@@ -60,25 +60,29 @@
   padding-left: 83px;
 }
 
-/* Typography */
+/* Typography - Higher specificity to override section styles */
+main .hero-banner h1,
+main .hero-banner h2,
 .hero-banner h1,
 .hero-banner h2,
 .hero-banner .hero-banner-title {
-  font-family: 'Lexia', sans-serif;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 1.23;
-  color: white;
-  margin: 0;
+  font-family: 'Lexia', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 48px !important;
+  line-height: 1.23 !important;
+  color: white !important;
+  margin: 0 !important;
 }
 
+/* Higher specificity to override section styles */
+main .hero-banner p,
 .hero-banner p {
-  font-family: 'Lexia', sans-serif;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.44;
-  color: white;
-  margin: 0;
+  font-family: 'Lexia', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 18px !important;
+  line-height: 1.44 !important;
+  color: white !important;
+  margin: 0 !important;
 }
 
 /* No background image variant */

@@ -271,6 +271,24 @@ main .section.highlight {
   --az-black: #000000;
 }
 
+/* Hide section marker headings */
+main h1#important-safety-information,
+main h2#hero-banner,
+main h2#content-section {
+  display: none;
+}
+
+/* LOKELMA Content Container */
+main > .section {
+  max-width: 100%;
+}
+
+main > .section > div {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 40px 60px;
+}
+
 /* LOKELMA Typography - Safety Information Page */
 main .section h3 {
   font-family: 'Lexia', sans-serif;
@@ -278,30 +296,34 @@ main .section h3 {
   font-size: 30px;
   line-height: 40px;
   color: var(--lokelma-blue);
-  margin: 30px 0 14px;
+  margin: 40px 0 20px;
+}
+
+main .section h3:first-of-type {
+  margin-top: 0;
 }
 
 main .section p {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--az-black);
-  margin: 0 0 14px;
+  margin: 0 0 16px;
 }
 
 main .section ul {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--az-black);
-  margin: 0 0 14px;
+  margin: 0 0 16px;
   padding-left: 24px;
 }
 
 main .section li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* Hyperlinks */
@@ -322,10 +344,23 @@ main .section sup {
 }
 
 /* References Section */
+main .section h2#references {
+  font-family: 'Lexia', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--az-black);
+  margin: 48px 0 20px;
+}
+
+main .section h2#references + p {
+  margin-bottom: 12px;
+}
+
 main .section h2#references + p strong {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--az-black);
 }
@@ -333,28 +368,37 @@ main .section h2#references + p strong {
 main .section h2#references + p + ol {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.6;
   color: var(--az-black);
-  margin: 8px 0;
+  margin: 0;
   padding-left: 20px;
 }
 
 main .section h2#references + p + ol li {
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 /* Responsive Typography */
 @media (max-width: 768px) {
+  main > .section > div {
+    padding: 32px 24px;
+  }
+
   main .section h3 {
     font-size: 24px;
     line-height: 32px;
-    margin: 24px 0 12px;
+    margin: 32px 0 16px;
   }
 
   main .section p,
   main .section ul {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+
+  main .section h2#references {
+    font-size: 20px;
+    margin: 40px 0 16px;
   }
 }
