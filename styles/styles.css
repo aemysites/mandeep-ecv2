@@ -266,6 +266,8 @@ main .section.highlight {
   --lokelma-green: #00927c;
   --lokelma-pink: #c62263;
   --lokelma-blue: #003b45;
+  --lokelma-yellow: #fdb515;
+  --lokelma-yellow-accent: #ffd100;
   --az-dark-gray: #1c1c1c;
   --az-white: #ffffff;
   --az-black: #000000;
@@ -400,5 +402,72 @@ main .section h2#references + p + ol li {
   main .section h2#references {
     font-size: 20px;
     margin: 40px 0 16px;
+  }
+}
+
+/* Resources Page Styling */
+main h2#page-title + h3 {
+  font-family: 'Lexia', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  color: var(--lokelma-blue);
+  margin: 40px 0;
+}
+
+/* Payment Assistance Card Header */
+main h2#payment-assistance-card {
+  display: none;
+}
+
+main h2#payment-assistance-card + h3 {
+  font-family: 'Lexia', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--lokelma-blue);
+  background: rgba(0, 146, 124, 0.2);
+  padding: 30px;
+  margin: 0 0 20px;
+}
+
+main h2#payment-assistance-card + h3 + p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--lokelma-blue);
+  background: rgba(0, 146, 124, 0.2);
+  padding: 0 30px 30px;
+  margin: -20px 0 0;
+}
+
+/* Hide section headings for resources page */
+main h2#patient-tear-sheet,
+main h2#dose-card,
+main h2#product-monograph,
+main h2#lokelma-data-resource,
+main h3#2-easy-steps-to-help-patients-save-on-lokelma {
+  display: none;
+}
+
+/* Responsive - Resources Page */
+@media (max-width: 768px) {
+  main h2#page-title + h3 {
+    font-size: 36px;
+    line-height: 44px;
+    margin: 32px 0;
+  }
+
+  main h2#payment-assistance-card + h3 {
+    font-size: 20px;
+    line-height: 28px;
+    padding: 24px;
+  }
+
+  main h2#payment-assistance-card + h3 + p {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 24px 24px;
   }
 }
