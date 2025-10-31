@@ -406,13 +406,23 @@ main .section h2#references + p + ol li {
 }
 
 /* Resources Page Styling */
+main h1#resources {
+  display: none;
+}
+
+main h2#page-title {
+  display: none;
+}
+
 main h2#page-title + h3 {
   font-family: 'Lexia', sans-serif;
   font-weight: 400;
   font-size: 48px;
   line-height: 58px;
   color: var(--lokelma-blue);
-  margin: 40px 0;
+  margin: 80px auto 60px;
+  max-width: 1262px;
+  padding: 0 60px;
 }
 
 /* Payment Assistance Card Header */
@@ -427,8 +437,10 @@ main h2#payment-assistance-card + h3 {
   line-height: 34px;
   color: var(--lokelma-blue);
   background: rgba(0, 146, 124, 0.2);
-  padding: 30px;
-  margin: 0 0 20px;
+  padding: 30px 60px;
+  margin: 0;
+  max-width: 1262px;
+  margin: 0 auto;
 }
 
 main h2#payment-assistance-card + h3 + p {
@@ -438,16 +450,17 @@ main h2#payment-assistance-card + h3 + p {
   line-height: 28px;
   color: var(--lokelma-blue);
   background: rgba(0, 146, 124, 0.2);
-  padding: 0 30px 30px;
-  margin: -20px 0 0;
+  padding: 20px 60px 30px;
+  margin: 0 auto 40px;
+  max-width: 1262px;
 }
 
-/* Hide section headings for resources page */
-main h2#patient-tear-sheet,
-main h2#dose-card,
-main h2#product-monograph,
-main h2#lokelma-data-resource,
-main h3#2-easy-steps-to-help-patients-save-on-lokelma {
+/* Hide all section headings with block names */
+main h2#patient-tear-sheet-columns-resources,
+main h2#dose-card-columns-resources,
+main h2#product-monograph-columns-resources,
+main h2#lokelma-data-resource-columns-resources,
+main h3#easy-steps-to-help-patients-save-on-lokelma-columns-resources {
   display: none;
 }
 
